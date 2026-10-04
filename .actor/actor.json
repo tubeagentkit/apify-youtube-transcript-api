@@ -1,0 +1,59 @@
+{
+  "actorSpecification": 1,
+  "name": "youtube-transcript-api",
+  "title": "YouTube Transcript API",
+  "description": "Get YouTube transcripts with timestamps, in one request per video, from any cloud server.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "overview": {
+          "title": "Transcripts",
+          "transformation": {
+            "fields": [
+              "videoId",
+              "title",
+              "author",
+              "language",
+              "wordCount",
+              "transcript",
+              "error"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "videoId": {
+                "label": "Video ID"
+              },
+              "title": {
+                "label": "Title"
+              },
+              "author": {
+                "label": "Channel"
+              },
+              "language": {
+                "label": "Language"
+              },
+              "wordCount": {
+                "label": "Words",
+                "format": "number"
+              },
+              "transcript": {
+                "label": "Transcript"
+              },
+              "error": {
+                "label": "Error"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "output": "./output_schema.json"
+}

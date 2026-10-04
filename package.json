@@ -1,0 +1,10 @@
+{
+  "name": "youtube-transcript-api",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Fetch YouTube transcripts with timestamps through the GetYouTubeTranscript API.",
+  "main": "src/main.js",
+  "scripts": { "start": "node src/main.js", "test": "node --test src/" },
+  "dependencies": { "apify": "^3.2.0" },
+  "license": "MIT"
+}

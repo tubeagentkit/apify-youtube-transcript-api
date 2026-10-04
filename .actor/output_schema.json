@@ -1,0 +1,12 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "YouTube Transcript API output",
+  "properties": {
+    "transcripts": {
+      "type": "string",
+      "title": "Transcripts",
+      "description": "One item per video: transcript text, segments with timestamps, or an error code.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "title": "YouTube Transcript API input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "videos": {
+      "title": "Videos",
+      "type": "array",
+      "description": "YouTube video URLs (watch, youtu.be, shorts) or 11-character video IDs.",
+      "editor": "stringList",
+      "prefill": [
+        "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+      ],
+      "default": [
+        "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+      ]
+    },
+    "apiKey": {
+      "title": "GetYouTubeTranscript API key",
+      "type": "string",
+      "description": "Required. Your API key from https://getyoutubetranscript.com/developers (free tier, no card). Each successful transcript uses 1 credit; failed requests are not charged.",
+      "editor": "textfield",
+      "isSecret": true
+    },
+    "language": {
+      "title": "Language",
+      "type": "string",
+      "description": "Transcript language code, for example en, es, de. Defaults to English.",
+      "editor": "textfield",
+      "default": "en"
+    },
+    "timestamps": {
+      "title": "Include timestamps",
+      "type": "boolean",
+      "description": "Add per-line segments with start and duration in seconds.",
+      "default": true
+    }
+  },
+  "required": [
+    "videos"
+  ]
+}
