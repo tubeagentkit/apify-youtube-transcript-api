@@ -24,6 +24,10 @@ export async function fetchTranscript(video, { apiKey, language, timestamps }, f
             title: data.title,
             author: data.author_name,
             language: data.language_code,
+            requestedLanguage: data.requested_language,
+            // 'manual' (creator captions), 'auto' (speech recognition) or null when unknown.
+            captionType: data.caption_type ?? null,
+            fetchedAt: data.fetched_at ?? null,
             wordCount: data.word_count,
             transcript: data.transcript,
             ...(timestamps ? { segments: data.segments ?? [] } : {}),

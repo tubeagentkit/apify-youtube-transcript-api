@@ -40,6 +40,9 @@ One dataset item per video:
   "title": "Me at the zoo",
   "author": "jawed",
   "language": "en",
+  "requestedLanguage": "en",
+  "captionType": "manual",
+  "fetchedAt": "2026-08-25T04:47:39.930Z",
   "wordCount": 39,
   "transcript": "All right, so here we are, in front of the elephants...",
   "segments": [
@@ -47,6 +50,8 @@ One dataset item per video:
   ]
 }
 ```
+
+`language` is the caption track actually returned; when it differs from `requestedLanguage`, the video didn't have the language you asked for. `captionType` is `manual` (uploaded by the creator), `auto` (YouTube speech recognition, so names may be misheard) or `null` if unknown.
 
 If a video has no captions, or the requested language isn't available, the item has `error` (for example `TRANSCRIPT_NOT_FOUND` or `LANGUAGE_NOT_AVAILABLE`) and `message` instead, and the run continues with the next video. An invalid key or an empty credit balance stops the run right away.
 
